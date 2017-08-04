@@ -13,10 +13,20 @@ const app = {
 
 		const requestBase = `https://wind-bow.gomix.me/twitch-api`;
 		const requestType = `/streams`;
+		const requestStreams = [
+			`/cretetion`,
+			`/ESL_SC2`,
+			`/freecodecamp`,
+			`/habathcx`,
+			`/noobs2ninjas`,
+			`/OgamingSC2`,
+			`/RobotCaleb`,
+			`/storbeck`,
+		];
 		const requestId = `requestId=${Math.floor(Math.random() * cacheBusterNum).toString()}`; // 'cache-buster'
 		const requestCallback = `&callback=app.setChannels`;
 
-		app.streamers.forEach((item, index)=> {
+		requestStreams.forEach((item)=> {
 			const apiScript = document.createElement(`script`);
 
 			apiScript.src = `${requestBase}${requestType}${item}?${requestId}${requestCallback}`;
@@ -48,30 +58,39 @@ const app = {
 	setChannels(payload) {
 		app.data.push(payload);
 
+		const currentData = app.data[app.data.length - 1];
 		const streams = document.querySelector(`.streams`);
 		const streamItem = document.createElement(`div`);
-		const streamer = `${app.streamers[app.data.length - 1].slice(1)}`;
+		const streamer = `${currentData._links.self
+			.split(`/`).pop()}`;
 
 		streamItem.className = `streamItem`;
-		streamItem.innerHTML = `
-			<div class="subStream">
-				<h1>${streamer}</h1>
-			</div>
-		`;
+
+		if (payload.stream === null) {
+			streamItem.innerHTML = `
+				<div class="subStream">
+					<img src="../media/images/${streamer}.jpeg"/>
+					<h1>${streamer}</h1>
+					<h3>inactive</h3>
+				</div>
+			`;
+		} else {
+			const game = currentData.stream.game;
+			const content = currentData.stream.channel.status;
+
+			streamItem.innerHTML = `
+				<div class="subStream">
+					<h1>${streamer}</h1>
+					<h3>${game}</h3>
+					<h4>${content}</h4>
+				</div>
+			`;
+		}
 
 		streams.appendChild(streamItem);
-	},
 
-	streamers: [
-		`/cretetion`,
-		`/ESL_SC2`,
-		`/freecodecamp`,
-		`/habathcx`,
-		`/noobs2ninjas`,
-		`/OgamingSC2`,
-		`/RobotCaleb`,
-		`/storbeck`,
-	],
+		app.data = [];
+	},
 };
 
 window.onload = app.onloadFunction;

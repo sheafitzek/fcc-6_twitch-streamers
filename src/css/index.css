@@ -3,6 +3,16 @@
 *:after {
   box-sizing: border-box;
 }
+
+.streamItem {
+  border-top: 1px solid black;
+  padding: 1rem;
+}
+
+.subStream {
+  border: 1px solid black;
+  padding: 0 2rem;
+}
  
 
  /*# sourceMappingURL= index.css.map */
