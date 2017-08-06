@@ -4,12 +4,31 @@
 	box-sizing: border-box;
 }
 
+.status {
+	padding-bottom: 0.5rem;
+}
+
 .streamItem {
 	border-top: 1px solid black;
 	padding: 1rem;
 }
 
 .subStream {
+	box-shadow: inset 0 0 1rem #454545;
 	border: 1px solid black;
 	padding: 0 2rem;
+
+	img {
+		width: 5rem;
+		height: 5rem;
+		border-radius: 25%;
+	}
+}
+
+.active {
+	background-color: #99ff99
+}
+
+.inactive {
+	background-color: #ababab;
 }
