@@ -68,11 +68,25 @@ const app = {
 		if (payload.stream === null) {
 			streamItem.innerHTML = `
 				<div class="subStream inactive">
-					<img src="../media/images/${streamer}.png"/>
-					<a href="${channel}" rel="noopener noreferrer" target="_blank">
-						<h1>${streamer}</h1>
-					</a>
-					<h2>inactive</h2>
+					<div class="icon">
+						<img src="../media/images/${streamer}.png"/>
+					</div>
+
+					<div class="user">
+						<a class="user" href="${channel}" rel="noopener noreferrer" target="_blank">
+							<h1>${streamer}</h1>
+						</a>
+					</div>
+
+					<div class="game">
+					</div>
+
+					<div class="status">
+						<h2>inactive</h2>
+					</div>
+
+					<div class="preview">
+					</div>
 				</div>
 			`;
 		} else {
@@ -81,12 +95,27 @@ const app = {
 
 			streamItem.innerHTML = `
 				<div class="subStream active">
-					<img src="../media/images/${streamer}.png"/>
-					<a href="${channel}" rel="noopener noreferrer" target="_blank">
-						<h1>${streamer}</h1>
-					</a>
-					<h2>Game:<br>${game}</h2>
-					<h3>Status:<br>${content}</h3>
+					<div class="icon">
+						<img src="../media/images/${streamer}.png"/>
+					</div>
+
+					<div class="user">
+						<a class="user" href="${channel}" rel="noopener noreferrer" target="_blank">
+							<h1>${streamer}</h1>
+						</a>
+					</div>
+
+					<div class="game">
+						<h2>Game:<br>${game}</h2>
+					</div>
+
+					<div class="status">
+						<h3>Status:<br>${content}</h3>
+					</div>
+
+					<div class="preview">
+						<img class="preview" src="${currentData.stream.preview.large}"/>
+					</div>
 				</div>
 			`;
 		}

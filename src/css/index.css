@@ -16,13 +16,54 @@
 .subStream {
   box-shadow: inset 0 0 1rem #454545;
   border: 1px solid black;
-  padding: 0 2rem;
+  padding: 2rem;
+  display: grid;
+  grid-template: 100% / 1fr 2fr 2fr 3fr 3fr;
 }
 
-.subStream img {
+.subStream .icon {
+  display: flex;
+  grid-area: 1 / 1 / -1 / 2;
+}
+
+.subStream .icon img {
   width: 5rem;
   height: 5rem;
   border-radius: 25%;
+  margin: auto;
+  box-shadow: 0.25rem 0.25rem 0.25rem #454545;
+}
+
+.subStream .user {
+  display: flex;
+  margin: auto;
+  padding: 0 1rem;
+  grid-area: 1 / 2 / -1 / 3;
+}
+
+.subStream .game {
+  display: flex;
+  margin: auto;
+  padding: 0 1rem;
+  grid-area: 1 / 3 / -1 / 4;
+}
+
+.subStream .status {
+  display: flex;
+  margin: auto;
+  padding: 0 1rem;
+  grid-area: 1 / 4 / -1 / 5;
+}
+
+.subStream .preview {
+  display: flex;
+  margin: auto;
+  grid-area: 1 / 5 / -1 / 6;
+}
+
+.subStream .preview img {
+  height: 10rem;
+  box-shadow: 0.25rem 0.25rem 0.25rem #454545;
 }
 
 .active {
