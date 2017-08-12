@@ -25,6 +25,7 @@ html {
 .grid {
 	// width: 100vw;
 	height: 100vh;
+	margin: 0;
 
 	grid-template: 100% / 10rem 1fr 10rem
 }
@@ -51,7 +52,7 @@ header {
 	}
 }
 
-.status {
+.filter {
 	padding-bottom: 0.5rem;
 	text-align: center;
 
@@ -62,6 +63,7 @@ header {
 		background: $twitch;
 		padding: .5rem;
 		font-weight: bold;
+		font-family: "Sarpanch";
 	}
 }
 
@@ -100,10 +102,16 @@ header {
 		padding: 0 1rem;
 
 		grid-area: 1 / 2 / -1 / 3;
+
+		> h1 {
+			font-family: "Audiowide";
+			font-size: 1rem;
+		}
 	}
 
 	.game {
 		display: flex;
+		font-family: "Sarpanch";
 		margin: auto;
 
 		padding: 0 1rem;
@@ -113,8 +121,8 @@ header {
 
 	.status {
 		display: flex;
+		font-family: "Sarpanch";
 		margin: auto;
-
 		padding: 0 1rem;
 
 		grid-area: 1 / 4 / -1 / 5;
@@ -142,7 +150,6 @@ header {
 }
 
 footer {
-	background: #eaecf0;
 	border-top: 1px solid black;
 
 	grid-area: -2 / 1 / -1 / -1;
@@ -164,7 +171,7 @@ footer ul li {
 }
 
 footer ul li i {
-	color: black;
+	color: $twitch;
 }
 
 footer p {
