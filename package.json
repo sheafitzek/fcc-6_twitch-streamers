@@ -4,7 +4,7 @@
   "description": "Status of, & Links to, Certain Twitch Channels",
   "main": "index.html",
   "scripts": {
-    "deploy": "gh-pages -d /",
+    "deploy": "gh-pages -d src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,7 +16,7 @@
   "bugs": {
     "url": "https://github.com/sheafitzek/fcc-6_twitch-streamers/issues"
   },
-  "homepage": "https://github.com/sheafitzek/fcc-6_twitch-streamers#readme",
+  "homepage": "https://github.com/sheafitzek/fcc-6_twitch-streamers",
   "devDependencies": {
     "gh-pages": "^1.0.0"
   }

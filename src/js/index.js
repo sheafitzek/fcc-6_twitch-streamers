@@ -87,7 +87,7 @@ const app = {
 			streamItem.innerHTML = `
 				<div class="subStream inactive">
 					<div class="icon">
-						<img src="../media/images/${streamer}.png"/>
+						<img src="media/images/${streamer}.png"/>
 					</div>
 
 					<div class="user">
@@ -114,7 +114,7 @@ const app = {
 			streamItem.innerHTML = `
 				<div class="subStream active">
 					<div class="icon">
-						<img src="../media/images/${streamer}.png"/>
+						<img src="media/images/${streamer}.png"/>
 					</div>
 
 					<div class="user">
