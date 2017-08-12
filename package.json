@@ -1,0 +1,23 @@
+{
+  "name": "fcc-6_twitch-streamers",
+  "version": "1.0.0",
+  "description": "Status of, & Links to, Certain Twitch Channels",
+  "main": "index.html",
+  "scripts": {
+    "deploy": "gh-pages -d /",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sheafitzek/fcc-6_twitch-streamers.git"
+  },
+  "author": "Shea Fitzek",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sheafitzek/fcc-6_twitch-streamers/issues"
+  },
+  "homepage": "https://github.com/sheafitzek/fcc-6_twitch-streamers#readme",
+  "devDependencies": {
+    "gh-pages": "^1.0.0"
+  }
+}
