@@ -3,10 +3,6 @@
 	src: url('../fonts/Twitchy.TV.ttf') format('truetype');
 }
 
-* {
-    outline: 1px solid red;
-}
-
 $active: #99ff99;
 $inactive: #cdcdcd;
 $twitch: #4B367C;
@@ -19,11 +15,10 @@ $twitch: #4B367C;
 
 html {
 	font-size: 62.5%; /* 62.5% of (std) 16px = 10px = 1em = 1rem */
-	background: whitesmoke;
+	background: $inactive;
 }
 
 .grid {
-	// width: 100vw;
 	height: 100vh;
 	margin: 0;
 
@@ -45,15 +40,11 @@ header {
 			2px -2px 5px $twitch,
 			-2px 2px 5px $twitch,
 			-2px -2px 5px $twitch;
-
-		span {
-			margin-top: 0.125rem;
-		}
 	}
 }
 
 .filter {
-	padding-bottom: 0.5rem;
+	border-top: 1px solid $twitch;
 	text-align: center;
 
 	button {
@@ -64,11 +55,21 @@ header {
 		padding: .5rem;
 		font-weight: bold;
 		font-family: "Sarpanch";
+
+		&:hover {
+			color: whitesmoke;
+		}
+
+		&:focus {
+			background: whitesmoke;
+			color: $twitch;
+			outline: none;
+		}
 	}
 }
 
 .streamItem {
-	border-top: 1px solid black;
+	border-top: 1px solid $twitch;
 	padding: 1rem;
 }
 
@@ -78,7 +79,6 @@ header {
 	padding: 2rem;
 
 	display: grid;
-	// grid-template: 100% / 1fr 1fr 1fr 2fr 2fr;
 	grid-template: 100% / 1fr 2fr 2fr 3fr 3fr;
 
 	.icon {
@@ -146,7 +146,7 @@ header {
 }
 
 .inactive {
-	background-color: $inactive;
+	background-color: whitesmoke;
 }
 
 footer {
@@ -184,7 +184,6 @@ footer p {
 }
 
 .modal {
-	background-color: rgb(0, 0, 0);
 	background-color: rgba(0, 0, 0, 0.75);
 	display: none;
 	height: 100%;
@@ -197,16 +196,16 @@ footer p {
 }
 
 .modal-content {
-	background-color: #eaecf0;
-	border: 2px solid #970747;
-	color: #09203f;
+	background-color: $inactive;
+	border: 2px solid $twitch;
+	color: $twitch;
 	margin: 20% auto;
 	padding: 20px;
 	width: 80%;
 }
 
 .close {
-	color: #aaa;
+	color: black;
 	float: right;
 	font-size: 28px;
 	font-weight: bold;
@@ -214,7 +213,7 @@ footer p {
 
 .close:hover,
 .close:focus {
-	color: black;
+	color: $twitch;
 	cursor: pointer;
 	text-decoration: none;
 }
@@ -223,27 +222,6 @@ footer p {
 }
 
 @media screen and (orientation: portrait) {
-	// main {
-	// 	display: flex;
-	// 	flex-direction: column;
-	// 	align-items: stretch;
-		
-	// 	grid-area: 2 / 1 / 3 / -1;
-	// }
-
-	// .results {
-	// 	border-bottom: 1px solid black;
-	// 	border-right: none;
-		
-	// 	grid-area: 1 / 1 / 2 / 2;
-	// }
-
-	// .viewer {
-	// 	min-height: 100vh;
-		
-	// 	grid-area: 1 / 2 / 2 / 3;
-	// }
-	
 	.subStream.active {
 		display: grid;
 		grid-template: 1fr 1fr / repeat(10, 1fr);

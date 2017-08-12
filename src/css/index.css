@@ -3,10 +3,6 @@
   src: url("../fonts/Twitchy.TV.ttf") format("truetype");
 }
 
-* {
-  outline: 1px solid red;
-}
-
 *,
 *:before,
 *:after {
@@ -16,7 +12,7 @@
 html {
   font-size: 62.5%;
   /* 62.5% of (std) 16px = 10px = 1em = 1rem */
-  background: whitesmoke;
+  background: #cdcdcd;
 }
 
 .grid {
@@ -39,12 +35,8 @@ header h1 {
   text-shadow: 2px 2px 5px #4B367C, 2px -2px 5px #4B367C, -2px 2px 5px #4B367C, -2px -2px 5px #4B367C;
 }
 
-header h1 span {
-  margin-top: 0.125rem;
-}
-
 .filter {
-  padding-bottom: 0.5rem;
+  border-top: 1px solid #4B367C;
   text-align: center;
 }
 
@@ -58,8 +50,18 @@ header h1 span {
   font-family: "Sarpanch";
 }
 
+.filter button:hover {
+  color: whitesmoke;
+}
+
+.filter button:focus {
+  background: whitesmoke;
+  color: #4B367C;
+  outline: none;
+}
+
 .streamItem {
-  border-top: 1px solid black;
+  border-top: 1px solid #4B367C;
   padding: 1rem;
 }
 
@@ -128,7 +130,7 @@ header h1 span {
 }
 
 .inactive {
-  background-color: #cdcdcd;
+  background-color: whitesmoke;
 }
 
 footer {
@@ -165,7 +167,6 @@ footer p {
 }
 
 .modal {
-  background-color: black;
   background-color: rgba(0, 0, 0, 0.75);
   display: none;
   height: 100%;
@@ -178,16 +179,16 @@ footer p {
 }
 
 .modal-content {
-  background-color: #eaecf0;
-  border: 2px solid #970747;
-  color: #09203f;
+  background-color: #cdcdcd;
+  border: 2px solid #4B367C;
+  color: #4B367C;
   margin: 20% auto;
   padding: 20px;
   width: 80%;
 }
 
 .close {
-  color: #aaa;
+  color: black;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -195,7 +196,7 @@ footer p {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: #4B367C;
   cursor: pointer;
   text-decoration: none;
 }

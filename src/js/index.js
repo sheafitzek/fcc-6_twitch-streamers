@@ -5,6 +5,18 @@
 // ###
 
 const app = {
+	closeModal() {
+		const modal = document.getElementsByClassName(`modal`);
+		const modalContent = document.getElementsByClassName(`modal-content`);
+
+		modal[0].style.display = `none`;
+
+		window.onclick = function onclick(event) {
+			event.target === modalContent
+			&& (modal[0].style.display = `none`);
+		};
+	},
+
 	data: [],
 
 	getChannels() {
@@ -37,6 +49,12 @@ const app = {
 
 	onloadFunction() {
 		app.getChannels();
+	},
+
+	openModal() {
+		const modal = document.getElementsByClassName(`modal`);
+
+		modal[0].style.display = `block`;
 	},
 
 	refresh() {
