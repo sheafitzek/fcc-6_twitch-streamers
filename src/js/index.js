@@ -1,9 +1,3 @@
-// ###
-
-// GET https://wind-bow.gomix.me/twitch-api/streams/freecodecamp?callback=cb
-
-// ###
-
 const app = {
 	closeModal() {
 		const modal = document.getElementsByClassName(`modal`);
